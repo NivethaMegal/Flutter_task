@@ -1,5 +1,3 @@
-import 'package:flutter_task/widgets/netflix.dart';
-
 class Images {
   Images._();
   static const PROFILE = 'images/oval-2.png';

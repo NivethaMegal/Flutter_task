@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_task/container/recommended_card_container.dart';
 import 'package:flutter_task/resources/strings.dart';
-import 'package:flutter_task/widgets/common/recommended_card.dart';
 import 'package:flutter_task/themes/colors.dart';
 
 class Recommended extends StatelessWidget {

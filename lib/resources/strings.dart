@@ -1,5 +1,3 @@
-import 'package:flutter_task/widgets/recommended.dart';
-
 class Strings {
   Strings._();
   static const SCREEN_NAME = 'My Prepaid';

@@ -39,7 +39,9 @@ class ScreenHeadingState extends State<ScreenHeading> {
                     style: Theme.of(context).textTheme.subtitle2,
                   ),
                   IconButton(
-                    icon: Icon(Icons.keyboard_arrow_down),
+                    icon: pressed
+                        ? Icon(Icons.keyboard_arrow_up)
+                        : Icon(Icons.keyboard_arrow_down),
                     color: AppColors.COLOR_BLACK,
                     onPressed: () {
                       setState(() {

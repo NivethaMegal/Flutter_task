@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_task/common/LatestPromos.dart';
-import 'package:flutter_task/common/specialPromos.dart';
-import 'package:flutter_task/resources/images.dart';
+import 'package:flutter_task/resources/strings.dart';
+import 'package:flutter_task/widgets/latest_promos_list.dart';
 import 'package:flutter_task/widgets/balance.dart';
+import 'package:flutter_task/widgets/common/goback_button.dart';
 import 'package:flutter_task/widgets/drawer.dart';
-import 'package:flutter_task/widgets/findOutMore.dart';
-import 'package:flutter_task/widgets/screenHeading.dart';
+import 'package:flutter_task/resources/images.dart';
+import 'package:flutter_task/widgets/screen_heading.dart';
+import 'package:flutter_task/widgets/special_promos_list.dart';
 
-class App extends StatelessWidget {
+class FindOutMorePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -32,18 +33,17 @@ class App extends StatelessWidget {
               ],
             ),
             drawer: AppDrawer(),
-            body: ListView(scrollDirection: Axis.vertical, children: [
-              ScreenHeading(),
-              Balance(),
-              SpecialPromos(),
-              Row(
+            body: SingleChildScrollView(
+              child: Column(
                 children: [
-                  LatestPromos(),
-                  LatestPromos(),
+                  ScreenHeading(),
+                  SpecialPromosList(name: Strings.SPECIAL_PROMOS),
+                  LatestPromosList(),
+                  SpecialPromosList(name: Strings.ROAMING_PLANS),
+                  Balance(),
+                  GoBack()
                 ],
               ),
-              SpecialPromos(),
-              FindOutMore(),
-            ])));
+            )));
   }
 }

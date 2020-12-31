@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_task/widgets/app.dart';
+import 'package:flutter_task/screens/app.dart';
 import 'package:flutter_task/themes/themes.dart';
 
 void main() {

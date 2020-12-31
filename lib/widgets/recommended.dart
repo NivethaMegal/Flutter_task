@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_task/container/recommended_card_container.dart';
 import 'package:flutter_task/resources/strings.dart';
-import 'package:flutter_task/common/recommendedCard.dart';
+import 'package:flutter_task/widgets/common/recommended_card.dart';
 import 'package:flutter_task/themes/colors.dart';
 
 class Recommended extends StatelessWidget {
@@ -11,7 +12,7 @@ class Recommended extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Padding(
-        padding: const EdgeInsets.only(left: 20.0, top: 20.0),
+        padding: const EdgeInsets.only(top: 20.0, bottom: 20.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -21,20 +22,22 @@ class Recommended extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'Recommended',
+                    Strings.RECOMMENDED,
                     style: new TextStyle(
                         fontSize: 12.0,
                         fontWeight: FontWeight.bold,
                         foreground: Paint()..shader = linearGradient),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(right: 10.0),
-                    child: RaisedButton(
-                      child: Text('View all'),
-                      color: AppColors.COLOR_WHITE,
-                      textColor: AppColors.COLOR_LIGHTISH_BLUE,
-                      onPressed: null,
-                    ),
+                    padding: const EdgeInsets.only(right: 20.0),
+                    child: GestureDetector(
+                        child: Text(Strings.VIEW_ALL,
+                            style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.w600,
+                                decoration: TextDecoration.none,
+                                color: AppColors.COLOR_LIGHTISH_BLUE)),
+                        onTap: () {}),
                   )
                 ],
               ),
@@ -42,30 +45,31 @@ class Recommended extends StatelessWidget {
             SizedBox(
               height: 12,
             ),
-            Container(
-              height: 90,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: [
-                  RecommendedCard(
-                    recommendedDays: Strings.RECOMMENDED_DAYS,
-                    recommendedModel: Strings.RECOMMENDED_MODEL,
-                  ),
-                  RecommendedCard(
-                    recommendedDays: Strings.RECOMMENDED_DAYS,
-                    recommendedModel: Strings.RECOMMENDED_MODEL,
-                  ),
-                  RecommendedCard(
-                    recommendedDays: Strings.RECOMMENDED_DAYS,
-                    recommendedModel: Strings.RECOMMENDED_MODEL,
-                  ),
-                  RecommendedCard(
-                    recommendedDays: Strings.RECOMMENDED_DAYS,
-                    recommendedModel: Strings.RECOMMENDED_MODEL,
-                  ),
-                ],
-              ),
-            ),
+            RecommendedDataContainer()
+            // Container(
+            //   height: 70,
+            //   child: ListView(
+            //     scrollDirection: Axis.horizontal,
+            //     children: [
+            //       RecommendedCard(
+            //         recommendedDays: Strings.RECOMMENDED_DAYS,
+            //         recommendedModel: Strings.RECOMMENDED_MODEL,
+            //       ),
+            //       RecommendedCard(
+            //         recommendedDays: Strings.RECOMMENDED_DAYS,
+            //         recommendedModel: Strings.RECOMMENDED_MODEL,
+            //       ),
+            //       RecommendedCard(
+            //         recommendedDays: Strings.RECOMMENDED_DAYS,
+            //         recommendedModel: Strings.RECOMMENDED_MODEL,
+            //       ),
+            //       RecommendedCard(
+            //         recommendedDays: Strings.RECOMMENDED_DAYS,
+            //         recommendedModel: Strings.RECOMMENDED_MODEL,
+            //       ),
+            //     ],
+            //   ),
+            // ),
           ],
         ),
       ),

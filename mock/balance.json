@@ -1,0 +1,27 @@
+{"balance":[{"id":0,
+        "balancename": "Load Balance",
+                      "image": "images/group-65.png",
+                      "number": "P 1675.00",
+                      "subdata": "Valid till 26 Dec"
+    },
+    {"id":1,
+        "balancename": "Data Balance",
+                      "image": "images/group-67.png",
+                      "number": "300 MB",
+                      "subdata": "of 12 GB"
+    },
+    {"id":2,
+        "balancename": "Load Balance",
+                      "image": "images/group-65.png",
+                      "number": "P 1675.00",
+                      "subdata": "Valid till 26 Dec"
+    },
+    {"id":3,
+        "balancename": "Data Balance",
+                      "image": "images/group-67.png",
+                      "number": "300 MB",
+                      "subdata": "of 12 GB"
+    }
+
+    ]
+}

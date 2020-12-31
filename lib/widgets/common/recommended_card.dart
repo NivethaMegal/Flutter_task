@@ -19,7 +19,7 @@ class RecommendedCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(10.0),
         ),
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.only(left: 16.0, top: 16.0),
           child: Container(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,

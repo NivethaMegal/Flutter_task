@@ -48,7 +48,7 @@ class BottomNavigation extends StatelessWidget {
           ),
         ],
         type: BottomNavigationBarType.shifting,
-        selectedItemColor: Colors.black,
+        selectedItemColor: AppColors.COLOR_BLUE,
         iconSize: 30,
         elevation: 5);
   }

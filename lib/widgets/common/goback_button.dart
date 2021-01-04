@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_task/screens/app.dart';
 import 'package:flutter_task/themes/colors.dart';
 
 class GoBack extends StatelessWidget {
@@ -8,14 +7,11 @@ class GoBack extends StatelessWidget {
     return FlatButton(
         color: AppColors.COLOR_LIGHT_BLUE,
         onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => App()),
-          );
+          Navigator.pushNamed(context, '/app');
         },
         child: Padding(
           padding: const EdgeInsets.all(20.0),
-          child: Text('Go Back',
+          child: Text('Go Back to DashBoard',
               style: TextStyle(
                 fontSize: 14.0,
                 color: AppColors.COLOR_BLACK,

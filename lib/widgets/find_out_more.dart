@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_task/screens/find_out_more_page.dart';
 import 'package:flutter_task/themes/colors.dart';
 import 'package:flutter_task/resources/strings.dart';
 
@@ -14,10 +13,7 @@ class FindOutMore extends StatelessWidget {
             side: BorderSide(color: AppColors.COLOR_BLACK, width: 2),
             borderRadius: new BorderRadius.circular(10.0)),
         onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => FindOutMorePage()),
-          );
+          Navigator.pushNamed(context, '/findOutMore');
         },
         child: Padding(
           padding: const EdgeInsets.all(20.0),

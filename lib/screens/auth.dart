@@ -22,7 +22,6 @@ class _AuthScreenState extends State<AuthScreen> {
         authResult = await auth.signInWithEmailAndPassword(
             email: email, password: password);
         storeDetails.newUser = email;
-        print(FirebaseFirestore.instance.collection('users'));
         Navigator.pushNamed(context, '/app');
       } else {
         authResult = await auth.createUserWithEmailAndPassword(

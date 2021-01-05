@@ -12,15 +12,31 @@ class ScreenHeading extends StatefulWidget {
 }
 
 class ScreenHeadingState extends State<ScreenHeading> {
-  String enteredValue;
   bool pressed = false;
+  //function to show list of AccNo
+  Widget getTextWidgets(List<dynamic> strings) {
+    List<Widget> list = new List<Widget>();
+    for (var i = 0; i < strings.length; i++) {
+      list.add(new Text(
+        strings[i],
+        style: Theme.of(context)
+            .textTheme
+            .subtitle2
+            .copyWith(color: AppColors.COLOR_BLUE),
+      ));
+    }
+    return new Column(
+        crossAxisAlignment: CrossAxisAlignment.start, children: list);
+  }
+
   @override
   Widget build(BuildContext context) {
     var accList = Provider.of<AccNoList>(context, listen: false);
+    final _formKey = GlobalKey<FormState>();
     return Padding(
       padding: const EdgeInsets.all(20.0),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
             children: [
@@ -61,26 +77,42 @@ class ScreenHeadingState extends State<ScreenHeading> {
                     context: context,
                     builder: (c) => AlertDialog(
                       title: Text('Enter your Account Number'),
-                      content: TextFormField(
-                        key: ValueKey('AccNumber'),
-                        validator: (value) {
-                          if (value.isEmpty || value.length < 10) {
-                            return 'Please Enter atleast 10 numbers.';
-                          } else {
-                            enteredValue = value;
-                            return null;
-                          }
-                        },
-                        keyboardType: TextInputType.phone,
-                        decoration: InputDecoration(
-                          labelText: 'Account Number',
+                      content: Form(
+                        key: _formKey,
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            TextFormField(
+                              key: ValueKey('AccNumber'),
+                              validator: (value) {
+                                if (value.isEmpty || value.length < 10) {
+                                  return 'Please Enter atleast 10 numbers.';
+                                } else {
+                                  accList.addAccNo = value;
+                                  Scaffold.of(context).showSnackBar(SnackBar(
+                                      content: Text("Welcome"),
+                                      action: SnackBarAction(
+                                        label: 'Ok',
+                                        onPressed: () {},
+                                      )));
+                                  return null;
+                                }
+                              },
+                              keyboardType: TextInputType.phone,
+                              decoration: InputDecoration(
+                                labelText: 'Account Number',
+                              ),
+                            ),
+                            RaisedButton(
+                              onPressed: () {
+                                _formKey.currentState.validate();
+                              },
+                              child: Text('Add'),
+                            ),
+                          ],
                         ),
                       ),
                       actions: [
-                        FlatButton(
-                          child: Text('Add'),
-                          onPressed: () => {accList.addAccNo = enteredValue},
-                        ),
                         FlatButton(
                           child: Text('Close'),
                           onPressed: () => {Navigator.pop(c, false)},
@@ -93,16 +125,7 @@ class ScreenHeadingState extends State<ScreenHeading> {
               ),
             ],
           ),
-          pressed
-              ? Row(
-                  children: [
-                    Text(
-                      'you are here...',
-                      style: Theme.of(context).textTheme.subtitle2,
-                    ),
-                  ],
-                )
-              : SizedBox(),
+          pressed ? getTextWidgets(accList.list) : SizedBox(),
         ],
       ),
     );

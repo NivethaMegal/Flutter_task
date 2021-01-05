@@ -4,6 +4,7 @@ import 'dart:async' show Future;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_task/core/models/recommended_data.dart';
 
+//Service class for Recommended card
 class Services {
   Future<RecommendedDataCard> getRecommendedData(BuildContext context) async {
     String jsonString = await DefaultAssetBundle.of(context)

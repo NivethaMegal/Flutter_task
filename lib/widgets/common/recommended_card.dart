@@ -5,6 +5,7 @@ class RecommendedCard extends StatelessWidget {
   final String recommendedModel;
   final String recommendedDays;
 
+  //Constructor
   RecommendedCard({
     @required this.recommendedModel,
     @required this.recommendedDays,
@@ -12,7 +13,7 @@ class RecommendedCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 158,
+      width: MediaQuery.of(context).size.width * 0.4,
       child: Card(
         color: AppColors.COLOR_BLUE,
         shape: RoundedRectangleBorder(

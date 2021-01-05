@@ -4,16 +4,22 @@ import 'package:flutter_task/resources/strings.dart';
 import 'package:flutter_task/themes/colors.dart';
 
 class SpecialPromos extends StatelessWidget {
+  //Shader for Gradient colors in headings
   final Shader linearGradient = LinearGradient(
     colors: <Color>[AppColors.COLOR_SAPPHIRE, AppColors.COLOR_LAVENDER_PINK],
   ).createShader(Rect.fromLTWH(0.0, 0.0, 200.0, 70.0));
 
   @override
   Widget build(BuildContext context) {
+    //Phone Mode
+    final isLandscape =
+        MediaQuery.of(context).orientation == Orientation.landscape;
     return Padding(
         padding: const EdgeInsets.all(20.0),
         child: Container(
-            height: 160,
+            height: isLandscape
+                ? MediaQuery.of(context).size.height * 0.5
+                : MediaQuery.of(context).size.height * 0.23,
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(Images.PROMOS_IMAGE),
@@ -59,7 +65,7 @@ class SpecialPromos extends StatelessWidget {
                         ),
                       ),
                       SizedBox(
-                        height: 10,
+                        height: isLandscape ? 60 : 10,
                       ),
                     ],
                   ),

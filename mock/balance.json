@@ -21,6 +21,18 @@
                       "image": "images/group-67.png",
                       "number": "300 MB",
                       "subdata": "of 12 GB"
+    },
+    {"id":4,
+        "balancename": "Data Balance",
+                      "image": "images/group-67.png",
+                      "number": "300 MB",
+                      "subdata": "of 12 GB"
+    },
+    {"id":5,
+        "balancename": "Load Balance",
+                      "image": "images/group-65.png",
+                      "number": "P 1675.00",
+                      "subdata": "Valid till 26 Dec"
     }
 
     ]

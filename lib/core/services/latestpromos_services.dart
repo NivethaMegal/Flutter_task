@@ -4,6 +4,7 @@ import 'dart:async' show Future;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_task/core/models/latestpromos_data.dart';
 
+//Service class for LatestPromo card
 class Services {
   Future<LatestPromoCard> getLatestPromoData(BuildContext context) async {
     String jsonString = await DefaultAssetBundle.of(context)

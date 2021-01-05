@@ -4,7 +4,7 @@ import 'package:flutter_task/themes/colors.dart';
 class ProfileDetails extends StatelessWidget {
   final String text;
   final String icon;
-
+  //Constructor
   ProfileDetails({@required this.text, @required this.icon});
   @override
   Widget build(BuildContext context) {

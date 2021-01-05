@@ -6,6 +6,7 @@ class LatestPromos extends StatelessWidget {
   final String icon;
   final String data;
   final String price;
+  //Constructor
   LatestPromos(
       {@required this.bgimage,
       @required this.icon,
@@ -13,10 +14,15 @@ class LatestPromos extends StatelessWidget {
       @required this.price});
   @override
   Widget build(BuildContext context) {
+    //Phone Mode
+    final isLandscape =
+        MediaQuery.of(context).orientation == Orientation.landscape;
     return Container(
       margin: const EdgeInsets.only(right: 10),
-      width: 140,
-      height: 160,
+      width: MediaQuery.of(context).size.width * 0.34,
+      height: isLandscape
+          ? MediaQuery.of(context).size.height * 0.4
+          : MediaQuery.of(context).size.height * 0.2,
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage(bgimage),

@@ -2,11 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_task/resources/images.dart';
 import 'package:flutter_task/themes/colors.dart';
 
+//Callback definition
 typedef void IntCallback(int _selectedIndex);
 
 class BottomNavigation extends StatelessWidget {
+  //Callback function
   final IntCallback selectPage;
   int labelIndex;
+  //Constructor
   BottomNavigation({@required this.selectPage, @required this.labelIndex});
   @override
   Widget build(BuildContext context) {

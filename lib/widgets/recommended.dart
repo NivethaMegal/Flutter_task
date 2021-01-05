@@ -4,6 +4,7 @@ import 'package:flutter_task/resources/strings.dart';
 import 'package:flutter_task/themes/colors.dart';
 
 class Recommended extends StatelessWidget {
+  //Shader for Gradient color in heading
   final Shader linearGradient = LinearGradient(
     colors: <Color>[AppColors.COLOR_DARK_GREY, AppColors.COLOR_SHADE_GREY],
   ).createShader(Rect.fromLTWH(0.0, 0.0, 200.0, 70.0));

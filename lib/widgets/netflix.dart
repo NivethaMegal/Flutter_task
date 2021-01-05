@@ -6,6 +6,7 @@ import 'package:flutter_task/widgets/channel_list.dart';
 import 'package:flutter_task/widgets/netflix_list.dart';
 
 class Netflix extends StatelessWidget {
+  //Shader for Gradient Color in heading
   final Shader linearGradient = LinearGradient(
     colors: <Color>[AppColors.COLOR_VIOLET, AppColors.COLOR_PALE_VIOLET],
   ).createShader(Rect.fromLTWH(0.0, 0.0, 200.0, 70.0));

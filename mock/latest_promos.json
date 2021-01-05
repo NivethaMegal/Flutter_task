@@ -21,6 +21,17 @@
                       "icon": "images/bitmap-6.png",
                       "data": "Facebook Surf",
                       "price": "P 129.00"
+},{"id":4,
+    "bgimage": "images/group-45.png",
+                      "icon": "images/bitmap-6.png",
+                      "data": "Spotify Premium",
+                      "price": "P 150.00"
+},
+{"id":5,
+    "bgimage": "images/group-43.png",
+                      "icon": "images/bitmap-4.png",
+                      "data": "Facebook Surf",
+                      "price": "P 150.00"
 }
 
 ]

@@ -1,16 +1,18 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_task/main.dart';
 import 'package:flutter_task/providers/userdetails_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_task/resources/images.dart';
 import 'package:flutter_task/screens/app.dart';
-import 'package:flutter_task/screens/auth.dart';
 import 'package:flutter_task/screens/profile.dart';
 import 'package:flutter_task/themes/colors.dart';
 
 class AppDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final isLandscape =
+        MediaQuery.of(context).orientation == Orientation.landscape;
     var storeDetails = Provider.of<Users>(context);
     var email = storeDetails.currentUserDetails;
     return Drawer(
@@ -18,7 +20,9 @@ class AppDrawer extends StatelessWidget {
         children: <Widget>[
           Container(
             color: AppColors.COLOR_BLUE,
-            height: 120,
+            height: isLandscape
+                ? MediaQuery.of(context).size.height * 0.3
+                : MediaQuery.of(context).size.height * 0.2,
             child: Padding(
               padding: const EdgeInsets.all(10.0),
               child: Column(
@@ -80,9 +84,7 @@ class AppDrawer extends StatelessWidget {
             onTap: () {
               FirebaseAuth.instance.signOut();
               Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => AuthScreen()),
-              );
+                  context, MaterialPageRoute(builder: (context) => MyApp()));
             },
           ),
         ],

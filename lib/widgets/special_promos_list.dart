@@ -6,6 +6,7 @@ import 'package:flutter_task/widgets/common/special_promo.dart';
 class SpecialPromosList extends StatelessWidget {
   final String name;
   SpecialPromosList({@required this.name});
+  //Shader for gradient color in heading
   final Shader linearGradient = LinearGradient(
     colors: <Color>[AppColors.COLOR_SAPPHIRE, AppColors.COLOR_LAVENDER_PINK],
   ).createShader(Rect.fromLTWH(0.0, 0.0, 200.0, 70.0));

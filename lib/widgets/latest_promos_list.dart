@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_task/container/latestpromos_container.dart';
 import 'package:flutter_task/resources/strings.dart';
 import 'package:flutter_task/themes/colors.dart';
-import 'package:flutter_task/widgets/common/latest_promo.dart';
-import 'package:flutter_task/resources/images.dart';
 
 class LatestPromosList extends StatelessWidget {
   final Shader linearGradient = LinearGradient(

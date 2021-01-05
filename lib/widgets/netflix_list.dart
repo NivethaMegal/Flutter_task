@@ -10,6 +10,8 @@ class NetflixList extends StatelessWidget {
   NetflixList({@required this.name, @required this.logo});
   @override
   Widget build(BuildContext context) {
+    final isLandscape =
+        MediaQuery.of(context).orientation == Orientation.landscape;
     return Container(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -47,14 +49,19 @@ class NetflixList extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(top: 20),
             child: Container(
-              height: 190,
+              height: isLandscape
+                  ? MediaQuery.of(context).size.height * 0.4
+                  : MediaQuery.of(context).size.height * 0.3,
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: [
                   NetflixCard(bgimage: Images.NETFLIX_IMAGE),
                   NetflixCard(bgimage: Images.NETFLIX_IMAGE1),
                   NetflixCard(bgimage: Images.NETFLIX_IMAGE),
-                  NetflixCard(bgimage: Images.NETFLIX_IMAGE1)
+                  NetflixCard(bgimage: Images.NETFLIX_IMAGE1),
+                  NetflixCard(bgimage: Images.NETFLIX_IMAGE),
+                  NetflixCard(bgimage: Images.NETFLIX_IMAGE1),
+                  NetflixCard(bgimage: Images.NETFLIX_IMAGE)
                 ],
               ),
             ),

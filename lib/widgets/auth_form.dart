@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_task/core/services/auth_services.dart';
+import 'package:flutter_task/providers/userdetails_provider.dart';
+import 'package:provider/provider.dart';
 
 class AuthForm extends StatefulWidget {
-  AuthForm(this.submitfn);
-  final void Function(String email, String password, String username,
-      bool isLogin, BuildContext ctx) submitfn;
   @override
   _AuthFormState createState() => _AuthFormState();
 }
@@ -21,13 +21,14 @@ class _AuthFormState extends State<AuthForm> {
     FocusScope.of(context).unfocus();
     if (isValid) {
       _formKey.currentState.save();
-      widget.submitfn(userEmail.trim(), userPassword.trim(), userName.trim(),
-          isLogin, context);
+      Services().submitForm(userEmail.trim(), userPassword.trim(),
+          userName.trim(), isLogin, context);
     }
   }
 
   @override
   Widget build(BuildContext context) {
+    var storeDetails = Provider.of<Users>(context, listen: false);
     return Center(
         child: SingleChildScrollView(
       child: Card(
@@ -53,6 +54,7 @@ class _AuthFormState extends State<AuthForm> {
                     ),
                     onSaved: (value) {
                       userEmail = value;
+                      // storeDetails.newUser = value;
                     },
                   ),
                   if (!isLogin)

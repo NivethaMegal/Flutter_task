@@ -31,48 +31,50 @@ class Profile extends StatelessWidget {
               ],
             ),
             drawer: AppDrawer(),
-            body: Column(
-              children: [
-                ScreenHeading(),
-                Container(
-                  height: 150,
-                  width: 150,
-                  decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage(Images.PROFILE1),
-                        fit: BoxFit.fill,
-                        alignment: Alignment.topCenter,
+            body: SingleChildScrollView(
+              child: Column(
+                children: [
+                  ScreenHeading(),
+                  Container(
+                    height: 150,
+                    width: 150,
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(Images.PROFILE1),
+                          fit: BoxFit.fill,
+                          alignment: Alignment.topCenter,
+                        ),
+                        shape: BoxShape.circle),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Column(
+                    children: [
+                      Text(
+                        'Nivetha R',
+                        style: TextStyle(
+                            color: AppColors.COLOR_GRAPE_PURPLE,
+                            fontSize: 20.5,
+                            fontWeight: FontWeight.bold),
                       ),
-                      shape: BoxShape.circle),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Column(
-                  children: [
-                    Text(
-                      'Nivetha R',
-                      style: TextStyle(
-                          color: AppColors.COLOR_GRAPE_PURPLE,
-                          fontSize: 20.5,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    Text(
-                      'Software Engineer',
-                      style: TextStyle(
-                          color: AppColors.COLOR_GRAPE_PURPLE,
-                          fontSize: 20.5,
-                          fontWeight: FontWeight.bold),
-                    ),
-                  ],
-                ),
-                ProfileDetails(
-                  text: '90471 46600',
-                  icon: 'phone',
-                ),
-                ProfileDetails(text: 'nivetha@moonraft.com', icon: 'mail'),
-                GoBack(),
-              ],
+                      Text(
+                        'Software Engineer',
+                        style: TextStyle(
+                            color: AppColors.COLOR_GRAPE_PURPLE,
+                            fontSize: 20.5,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  ),
+                  ProfileDetails(
+                    text: '90471 46600',
+                    icon: 'phone',
+                  ),
+                  ProfileDetails(text: 'nivetha@moonraft.com', icon: 'mail'),
+                  GoBack(),
+                ],
+              ),
             )));
   }
 }

@@ -4,6 +4,7 @@ import 'dart:async' show Future;
 import 'package:flutter/material.dart';
 import 'package:flutter_task/core/models/balance_data.dart';
 
+//Service class for Balance card
 class Services {
   Future<BalanceCard> getBalanceData(BuildContext context) async {
     String jsonString =

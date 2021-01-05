@@ -5,7 +5,7 @@ class ChannelCard extends StatelessWidget {
   final Color bgcolor;
   final String image;
   final String price;
-
+  //Constructor
   ChannelCard({
     @required this.bgcolor,
     @required this.image,
@@ -13,8 +13,13 @@ class ChannelCard extends StatelessWidget {
   });
   @override
   Widget build(BuildContext context) {
+    //Phone Mode
+    final isLandscape =
+        MediaQuery.of(context).orientation == Orientation.landscape;
     return Container(
-      width: 140,
+      width: isLandscape
+          ? MediaQuery.of(context).size.width * 0.3
+          : MediaQuery.of(context).size.width * 0.34,
       child: Card(
         color: bgcolor,
         shape: RoundedRectangleBorder(

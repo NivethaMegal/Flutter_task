@@ -19,7 +19,7 @@ class ChannelCard extends StatelessWidget {
     return Container(
       width: isLandscape
           ? MediaQuery.of(context).size.width * 0.3
-          : MediaQuery.of(context).size.width * 0.34,
+          : MediaQuery.of(context).size.width * 0.35,
       child: Card(
         color: bgcolor,
         shape: RoundedRectangleBorder(

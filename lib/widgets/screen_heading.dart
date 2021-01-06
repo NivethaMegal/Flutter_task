@@ -90,7 +90,7 @@ class ScreenHeadingState extends State<ScreenHeading> {
                                 } else {
                                   accList.addAccNo = value;
                                   Scaffold.of(context).showSnackBar(SnackBar(
-                                      content: Text("Welcome"),
+                                      content: Text("Submitted Successfully!"),
                                       action: SnackBarAction(
                                         label: 'Ok',
                                         onPressed: () {},

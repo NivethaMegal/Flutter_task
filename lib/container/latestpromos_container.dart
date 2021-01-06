@@ -21,8 +21,8 @@ class _LatestPromoDataContainerState extends State<LatestPromoDataContainer> {
             if (snapshot.hasData) {
               return Container(
                   height: isLandscape
-                      ? MediaQuery.of(context).size.height * 0.44
-                      : MediaQuery.of(context).size.height * 0.264,
+                      ? MediaQuery.of(context).size.height * 0.47
+                      : MediaQuery.of(context).size.height * 0.305,
                   child: ListView(scrollDirection: Axis.horizontal, children: [
                     for (var index = 0;
                         index < snapshot.data.latestPromos.length;

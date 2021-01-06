@@ -36,7 +36,7 @@ class ChannelList extends StatelessWidget {
             child: Container(
               height: isLandscape
                   ? MediaQuery.of(context).size.height * 0.5
-                  : MediaQuery.of(context).size.height * 0.25,
+                  : MediaQuery.of(context).size.height * 0.28,
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: [

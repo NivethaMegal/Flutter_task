@@ -8,6 +8,7 @@ import 'package:flutter_task/widgets/drawer.dart';
 import 'package:flutter_task/screens/dashboard.dart';
 import 'package:flutter_task/themes/colors.dart';
 import 'dart:collection';
+import 'dart:io';
 import 'package:flutter_task/providers/notificationcounter_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:badges/badges.dart';
@@ -46,7 +47,7 @@ class AppState extends State<App> {
                 actions: [
                   FlatButton(
                     child: Text('Yes'),
-                    onPressed: () => Navigator.pop(c, true),
+                    onPressed: () => exit(0),
                   ),
                   FlatButton(
                     child: Text('No'),

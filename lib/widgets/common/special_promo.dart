@@ -18,8 +18,8 @@ class SpecialPromos extends StatelessWidget {
         padding: const EdgeInsets.all(20.0),
         child: Container(
             height: isLandscape
-                ? MediaQuery.of(context).size.height * 0.5
-                : MediaQuery.of(context).size.height * 0.23,
+                ? MediaQuery.of(context).size.height * 0.55
+                : MediaQuery.of(context).size.height * 0.272,
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(Images.PROMOS_IMAGE),
@@ -28,6 +28,7 @@ class SpecialPromos extends StatelessWidget {
               ),
             ),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(

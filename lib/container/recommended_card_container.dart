@@ -22,7 +22,7 @@ class _RecommendedDataContainerState extends State<RecommendedDataContainer> {
               return Container(
                   height: isLandscape
                       ? MediaQuery.of(context).size.height * 0.2
-                      : MediaQuery.of(context).size.height * 0.1,
+                      : MediaQuery.of(context).size.height * 0.12,
                   child: ListView(scrollDirection: Axis.horizontal, children: [
                     for (var index = 0;
                         index < snapshot.data.recommended.length;

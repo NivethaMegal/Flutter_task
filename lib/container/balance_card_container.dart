@@ -20,8 +20,8 @@ class _BalanceDataContainerState extends State<BalanceDataContainer> {
             if (snapshot.hasData) {
               return Container(
                   height: isLandscape
-                      ? MediaQuery.of(context).size.height * 0.4
-                      : MediaQuery.of(context).size.height * 0.25,
+                      ? MediaQuery.of(context).size.height * 0.45
+                      : MediaQuery.of(context).size.height * 0.3,
                   child: ListView(scrollDirection: Axis.horizontal, children: [
                     for (var index = 0;
                         index < snapshot.data.balance.length;

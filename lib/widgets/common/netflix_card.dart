@@ -10,20 +10,19 @@ class NetflixCard extends StatelessWidget {
     //Phone Mode
     final isLandscape =
         MediaQuery.of(context).orientation == Orientation.landscape;
-    return Padding(
+    return Container(
         padding: const EdgeInsets.only(right: 10.0),
-        child: Container(
-            width: isLandscape
-                ? MediaQuery.of(context).size.width * 0.3
-                : MediaQuery.of(context).size.width * 0.34,
-            height: isLandscape
-                ? MediaQuery.of(context).size.height * 0.5
-                : MediaQuery.of(context).size.height * 0.3,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                fit: BoxFit.fill,
-                image: AssetImage(bgimage),
-              ),
-            )));
+        width: isLandscape
+            ? MediaQuery.of(context).size.width * 0.3
+            : MediaQuery.of(context).size.width * 0.34,
+        height: isLandscape
+            ? MediaQuery.of(context).size.height * 0.5
+            : MediaQuery.of(context).size.height * 0.3,
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            fit: BoxFit.fill,
+            image: AssetImage(bgimage),
+          ),
+        ));
   }
 }

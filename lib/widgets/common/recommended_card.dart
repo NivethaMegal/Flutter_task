@@ -32,6 +32,7 @@ class RecommendedCard extends StatelessWidget {
                     color: AppColors.COLOR_WHITE,
                     fontWeight: FontWeight.bold,
                   ),
+                  textDirection: TextDirection.ltr,
                 ),
                 SizedBox(
                   height: 4,
@@ -42,6 +43,7 @@ class RecommendedCard extends StatelessWidget {
                     fontSize: 12.0,
                     color: AppColors.COLOR_WHITE,
                   ),
+                  textDirection: TextDirection.ltr,
                 )
               ],
             ),

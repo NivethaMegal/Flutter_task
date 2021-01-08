@@ -13,16 +13,19 @@ class ProfileDetails extends StatelessWidget {
       margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
       padding: EdgeInsets.all(10.0),
       child: Row(
+        textDirection: TextDirection.ltr,
         children: [
           if (icon == 'phone')
             Icon(
               Icons.phone,
               color: AppColors.COLOR_BLACK,
+              textDirection: TextDirection.ltr,
             )
           else
             Icon(
               Icons.email,
               color: AppColors.COLOR_BLACK,
+              textDirection: TextDirection.ltr,
             ),
           SizedBox(
             width: 10.0,
@@ -32,8 +35,8 @@ class ProfileDetails extends StatelessWidget {
             style: TextStyle(
               color: AppColors.COLOR_BLACK,
               fontSize: 20.5,
-              fontFamily: 'PTSansNarrow',
             ),
+            textDirection: TextDirection.ltr,
           )
         ],
       ),
